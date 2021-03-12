@@ -9,6 +9,7 @@
     <script src="src/components/non-stop-movement.js"></script>
     <script src="src/components/with-left-right-controls.js"></script>
     <script src="src/components/with-music.js"></script>
+    <script src="src/components/with-dancing-lights.js"></script>
   </head>
   <body>
     <audio 
@@ -36,9 +37,15 @@
         material="color: grey; metalness: 1">
       </a-entity>
       <a-sky color="#000"></a-sky>
-      <!-- <a-entity light="type: ambient; color: #FAD6A5"></a-entity> -->
-      <a-entity light="type: directional; color: #0B1354; intensity: 3" position="-1 2 0"></a-entity>
-      <a-entity light="type: directional; color: #A155B9; intensity: 1" position="1 2 0"></a-entity>
+      <a-entity light="type: ambient; color: #B5B5B5 intensity: 0.1"></a-entity>
+      <a-entity 
+        light="type: directional; color: #0B1354; intensity: 3" 
+        position="-1 2 0" 
+        with-dancing-lights="intensityMin: 0.3"></a-entity>
+      <a-entity 
+        light="type: directional; color: #A155B9; intensity: 1" 
+        position="1 2 0" 
+        with-dancing-lights="intensityMin: 0.1"></a-entity>
     </a-scene>
   </body>
   <script src="src/audio/deezer-preview.js"></script>

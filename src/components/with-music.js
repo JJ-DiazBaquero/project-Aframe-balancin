@@ -5,11 +5,12 @@ AFRAME.registerComponent("with-music", {
     },
 
     tick: function (time, timeDelta) {
-        analyser.getByteTimeDomainData(dataArray);
+        // analyser.getByteTimeDomainData(integerArray);
+        analyser.getFloatFrequencyData(floatArray);
         this.el.setAttribute('position', {
-            x: this.originalPosition.x + dataArray[0]/100,
+            x: this.originalPosition.x + floatArray[699]/10,
             y: this.originalPosition.y,
             z: this.originalPosition.z
-        })
+        }) 
     }
 })
