@@ -4,13 +4,16 @@
   "version": "0.0.1",
   "license": "MIT",
   "scripts": {
-    "start": "budo --live --verbose --port 3000 --open",
+    "start": "budo --live --verbose --port 3000 --open src/index.js:static/bundle.js",
     "deploy": "ghpages",
     "ghpages": "ghpages"
   },
   "devDependencies": {
     "budo": "^7.0.0",
     "ghpages": "0.0.3"
+  },
+  "dependencies": {
+    "lodash":"^4.17.21"
   },
   "keywords": [
     "aframe",

@@ -9,11 +9,11 @@ AFRAME.registerComponent("with-dancing-lights", {
     },
 
     tick: function (time, timeDelta) {
-        //analyser.getByteTimeDomainData(integerArray);
+        analyser.getByteTimeDomainData(integerArray);
         //console.log(this.originalIntensity);
-        analyser.getByteFrequencyData(integerArray);
+        //analyser.getByteFrequencyData(integerArray);
         this.el.setAttribute('light', {
             intensity: Math.max(integerArray[0]/100, this.data.intensityMin)
-        }) 
+        })
     }
 })

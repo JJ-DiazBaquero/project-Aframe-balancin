@@ -43,6 +43,7 @@ const play  = function() {
 };
 
 var analyser = audioCtx.createAnalyser();
+var biquadFilter = audioCtx.createBiquadFilter();
 // Default value
 analyser.fftSize = 2048;
 var bufferLength = analyser.frequencyBinCount;
@@ -76,6 +77,11 @@ window.addEventListener('keydown', function (evt) {
     }
 });
 
-source.connect(analyser).connect(audioCtx.destination);
+source.connect(analyser).connect(biquadFilter);
+biquadFilter.connect(audioCtx.destination);
+
+biquadFilter.type = "lowpass";
+biquadFilter.frequency.setValueAtTime(50, audioCtx.currentTime, 0);
+biquadfilter.Q.value = 100;
 
 console.log(getSong(''))

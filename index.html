@@ -6,17 +6,23 @@
     <title>Hello, World! - A-Frame</title>
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
+    <script src="node_modules/lodash"></script>
+    <script type="module" src="src/index.js"></script>
     <script src="src/components/non-stop-movement.js"></script>
     <script src="src/components/with-left-right-controls.js"></script>
     <script src="src/components/with-music.js"></script>
     <script src="src/components/with-dancing-lights.js"></script>
   </head>
   <body>
-    <audio 
-    src="https://cdns-preview-6.dzcdn.net/stream/c-65b182b529099f9db47a7cfefe03496a-4.mp3"
+    <!-- <audio 
+    src="https://cdns-preview-e.dzcdn.net/stream/c-ec6a50a3edeb00ed5926935de2f2b01b-3.mp3"
     crossorigin="anonymous" >
-  </audio>
-    <a-scene>
+  </audio> -->
+  <audio 
+  src="https://cdns-preview-3.dzcdn.net/stream/c-3856daf5d59d21f3b4fa981483b432a9-5.mp3"
+  crossorigin="anonymous" >
+</audio>
+  <a-scene>
       <a-box 
         position="-1 0.5 -3"
         rotation="0 45 0"
@@ -32,12 +38,12 @@
       <a-cylinder id="getDataButton" position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-entity 
-        position="0.5 1 -2"
+        position="0.5 1 -2"s
         geometry="primitive: cone; radiusTop: 0; radiusBottom: 1; segmentsRadial: 6; segmentsHeight: 0; height: 0.5;"
         material="color: grey; metalness: 1">
       </a-entity>
       <a-sky color="#000"></a-sky>
-      <a-entity light="type: ambient; color: #B5B5B5 intensity: 0.1"></a-entity>
+      <a-entity light="type: ambient; color: #B5B5B5; intensity: 0.5"></a-entity>
       <a-entity 
         light="type: directional; color: #0B1354; intensity: 3" 
         position="-1 2 0" 
