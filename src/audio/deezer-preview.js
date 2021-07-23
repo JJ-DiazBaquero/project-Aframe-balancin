@@ -37,7 +37,7 @@ const play  = function() {
 		isPlaying = true;
 	// if track is playing pause it
 	} else {
-		audioElement.pause();
+		audioCtx.suspend();
 		isPlaying = false;
 	}	
 };
@@ -46,7 +46,7 @@ var analyser = audioCtx.createAnalyser();
 var biquadFilter = audioCtx.createBiquadFilter();
 // Default value
 analyser.fftSize = 2048;
-var bufferLength = analyser.frequencyBinCount;
+var bufferLength = analyser.fftSize;
 console.log('BufferLength: ' + bufferLength);
 var integerArray = new Uint8Array(bufferLength);
 var floatArray = new Float32Array(bufferLength);
@@ -65,8 +65,7 @@ const getFrecuencyData = function() {
 };
 
 window.addEventListener('keydown', function (evt) {
-    if (evt.key == " "){
-        console.log('call play')
+    if (evt.key == " ") {
         play();
     }
     if (evt.key == "o"){
@@ -77,11 +76,14 @@ window.addEventListener('keydown', function (evt) {
     }
 });
 
-source.connect(analyser).connect(biquadFilter);
-biquadFilter.connect(audioCtx.destination);
+source.connect(biquadFilter)
+biquadFilter.connect(analyser);
+
+source.connect(audioCtx.destination);
+// analyser.connect(audioCtx.destination);
 
 biquadFilter.type = "lowpass";
 biquadFilter.frequency.setValueAtTime(50, audioCtx.currentTime, 0);
-biquadfilter.Q.value = 100;
+// biquadFilter.Q.value = 100;
 
-console.log(getSong(''))
+console.log(getSong(''));

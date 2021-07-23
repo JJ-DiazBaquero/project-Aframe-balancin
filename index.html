@@ -11,17 +11,24 @@
     <script src="src/components/non-stop-movement.js"></script>
     <script src="src/components/with-left-right-controls.js"></script>
     <script src="src/components/with-music.js"></script>
-    <script src="src/components/with-dancing-lights.js"></script>
+    <script src="src/components/with-plane-dancing-lights.js"></script>
+    <script src="src/components/with-background-dancing-lights.js"></script>
+    <script src="src/components/particle-with-music.js"></script>
   </head>
   <body>
     <!-- <audio 
     src="https://cdns-preview-e.dzcdn.net/stream/c-ec6a50a3edeb00ed5926935de2f2b01b-3.mp3"
     crossorigin="anonymous" >
   </audio> -->
-  <audio 
+  <!-- <audio 
   src="https://cdns-preview-3.dzcdn.net/stream/c-3856daf5d59d21f3b4fa981483b432a9-5.mp3"
   crossorigin="anonymous" >
-</audio>
+  </audio> -->
+
+  <audio 
+    src="https://cdns-preview-6.dzcdn.net/stream/c-65b182b529099f9db47a7cfefe03496a-4.mp3"
+    crossorigin="anonymous" >
+  </audio>
   <a-scene>
       <a-box 
         position="-1 0.5 -3"
@@ -47,12 +54,48 @@
       <a-entity 
         light="type: directional; color: #0B1354; intensity: 3" 
         position="-1 2 0" 
-        with-dancing-lights="intensityMin: 0.3"></a-entity>
+        with-background-dancing-lights="intensityMin: 0.3"></a-entity>
       <a-entity 
         light="type: directional; color: #A155B9; intensity: 1" 
         position="1 2 0" 
-        with-dancing-lights="intensityMin: 0.1"></a-entity>
+        with-background-dancing-lights="intensityMin: 0.1"></a-entity>
+      
+      <!-- Plane flicker lights -->
+      <a-plane
+        light="type: point; intensity: 3; distance: 50; decay: 2; color: #FFFC00"
+        rotation="0 90 0"
+        material="color: #FFFC00; shader: flat"
+        position="-5 1 -4"
+        with-plane-dancing-lights
+        width="2" height="6">
+      </a-plane>
+      <a-plane 
+        light="type: point; intensity: 3; distance: 50; decay: 2; color: #FF0000"
+        rotation="0 -90 0"
+        material="color: #FF0000; shader: flat"
+        position="5 1 -4"
+        with-plane-dancing-lights
+        width="2" height="6">
+      </a-plane>
+
+      <a-plane
+        light="type: point; intensity: 3; distance: 50; decay: 2; color: #FFFC00"
+        rotation="0 90 0"
+        material="color: #FFFC00; shader: flat"
+        position="-5 1 -7"
+        with-plane-dancing-lights
+        width="2" height="6">
+      </a-plane>
+      <a-plane 
+        light="type: point; intensity: 3; distance: 50; decay: 2; color: #FF0000"
+        rotation="0 -90 0"
+        material="color: #FF0000; shader: flat"
+        position="5 1 -7"
+        with-plane-dancing-lights
+        width="2" height="6">
+      </a-plane>
     </a-scene>
   </body>
   <script src="src/audio/deezer-preview.js"></script>
+  <script src="src/audio/wave-visualizer.js"></script>
 </html>
