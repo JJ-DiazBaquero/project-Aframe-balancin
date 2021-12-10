@@ -34,6 +34,11 @@ acorn@^7.0.0:
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
   integrity sha512-nQyp0o1/mNdbTO1PO6kHkwSrmgZ0MT/jCCpNiwbUjGoRN4dlBhqJtoQuCnEOKzgTVwg0ZWiCoQy6SxMebQVh8A==
 
+aframe-rain@^1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/aframe-rain/-/aframe-rain-1.0.2.tgz#57b9e17845f163f66850829054f269bcc1cfd4b6"
+  integrity sha1-V7nheEXxY/ZoUIKQVPJpvMHP1LY=
+
 ansi-regex@^0.2.0, ansi-regex@^0.2.1:
   version "0.2.1"
   resolved "https://registry.yarnpkg.com/ansi-regex/-/ansi-regex-0.2.1.tgz#0d8e946967a3d8143f93e24e298525fc1b2235f9"

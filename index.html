@@ -7,6 +7,7 @@
     <meta name="description" content="Hello, World! - A-Frame">
     <script src="https://aframe.io/releases/0.5.0/aframe.min.js"></script>
     <script src="node_modules/lodash"></script>
+    <script src="node_modules/aframe-rain/index.js"></script>
     <script type="module" src="src/index.js"></script>
     <script src="src/components/non-stop-movement.js"></script>
     <script src="src/components/with-left-right-controls.js"></script>
@@ -14,34 +15,38 @@
     <script src="src/components/with-plane-dancing-lights.js"></script>
     <script src="src/components/with-background-dancing-lights.js"></script>
     <script src="src/components/particle-with-music.js"></script>
+    <script src="src/components/grid-helper.js"></script>
+    <script src="src/audio/freq-visualizer.js"></script>
   </head>
   <body>
     <!-- <audio 
     src="https://cdns-preview-e.dzcdn.net/stream/c-ec6a50a3edeb00ed5926935de2f2b01b-3.mp3"
     crossorigin="anonymous" >
   </audio> -->
-  <!-- <audio 
-  src="https://cdns-preview-3.dzcdn.net/stream/c-3856daf5d59d21f3b4fa981483b432a9-5.mp3"
-  crossorigin="anonymous" >
+
+<!--   <audio 
+    src="https://cdns-preview-6.dzcdn.net/stream/c-65b182b529099f9db47a7cfefe03496a-4.mp3"
+    crossorigin="anonymous" >
   </audio> -->
 
   <audio 
-    src="https://cdns-preview-6.dzcdn.net/stream/c-65b182b529099f9db47a7cfefe03496a-4.mp3"
-    crossorigin="anonymous" >
-  </audio>
-  <a-scene>
+  src="https://cdns-preview-0.dzcdn.net/stream/c-01344f0440287580ec9cc6f660747c6a-3.mp3"
+  crossorigin="anonymous" >
+</audio>
+  <a-scene rain grid-helper freq-visualizer>
+      <!-- <a-plane rotation="-90 0 0" width="200" height="200" color="#191970"></a-plane> -->
       <a-box 
         position="-1 0.5 -3"
         rotation="0 45 0"
         color="#4CC3D9"
         with-music>
       </a-box>
-      <a-sphere 
+      <!-- <a-sphere 
         position="0 1.25 -5"
         radius="1.5" color="#EF2D5E"
         non-stop-movement="initialDirection: 0 0 -1; speed: 0.5;"
         with-left-right-controls>
-      </a-sphere>
+      </a-sphere> -->
       <a-cylinder id="getDataButton" position="1 0.75 -3" radius="0.5" height="1.5" color="#FFC65D"></a-cylinder>
       <a-plane position="0 0 -4" rotation="-90 0 0" width="4" height="4" color="#7BC8A4"></a-plane>
       <a-entity 
